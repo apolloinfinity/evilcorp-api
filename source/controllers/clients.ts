@@ -34,8 +34,6 @@ export const newClient = async (req: Request, res: Response) => {
       message: "New client was successfully created",
       client: { ...newClient, _id: result?.insertedId },
     });
-    // testing
-    // res.status(201).json(newClient);
   } catch (error) {
     res.status(500).json(error);
   }
