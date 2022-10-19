@@ -1,6 +1,7 @@
+import { ObjectId } from "mongodb";
 export interface Client {
-  _id: Id;
-  avatar: string;
+  _id?: ObjectId;
+  avatar?: string;
   first_name: string;
   last_name: string;
   email: string;
@@ -11,16 +12,12 @@ export interface Client {
   company: Company;
 }
 
-export interface Id {
-  $oid: string;
-}
-
 export interface Address {
   street_address: string;
   city: string;
-  state: string | null;
-  country: string;
-  zip_code: string;
+  state?: string;
+  country?: string;
+  zip_code?: string;
 }
 
 export interface Company {
